@@ -1,5 +1,5 @@
 package com.example.employeelocation.data.model
 
-internal data class EmployeeListDataModel(
+data class EmployeeListDataModel(
     val employeeList: List<EmployeeDataModel>
 )

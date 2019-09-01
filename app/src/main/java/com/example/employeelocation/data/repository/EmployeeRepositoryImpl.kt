@@ -2,10 +2,9 @@ package com.example.employeelocation.data.repository
 
 import com.example.employeelocation.data.model.toDomainModel
 import com.example.employeelocation.data.retrofit.service.EmployeeRetrofitService
-import com.example.employeelocation.domain.model.EmployeeDomainModel
 import com.example.employeelocation.domain.repository.EmployeeRepository
 
-internal class EmployeeRepositoryImpl (
+class EmployeeRepositoryImpl (
     private val employeeRetrofitService: EmployeeRetrofitService
 ) : EmployeeRepository {
 

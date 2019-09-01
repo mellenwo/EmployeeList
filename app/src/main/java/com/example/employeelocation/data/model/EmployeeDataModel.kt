@@ -3,7 +3,7 @@ package com.example.employeelocation.data.model
 import com.example.employeelocation.domain.model.EmployeeDomainModel
 import com.google.gson.annotations.SerializedName
 
-internal class EmployeeDataModel (
+class EmployeeDataModel (
     @SerializedName("name") val name: String,
     @SerializedName("locations") val locations: List<String>,
     @SerializedName("title") val title: String

@@ -25,6 +25,7 @@
                     android:layout_height="wrap_content"
                     android:text="@{employee.name}"
                     android:layout_marginStart="24dp"
+                    android:textSize="21sp"
                     tools:text="Nancy"
                     app:layout_constraintBottom_toTopOf="@id/employee_title"
                     app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +36,9 @@
                     android:id="@+id/employee_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorSecondaryText"
                     android:layout_marginStart="24dp"
+                    android:textSize="14sp"
                     android:text="@{employee.title}"
                     tools:text="Sales Engineer"
                     android:gravity="bottom"
@@ -44,6 +47,14 @@
                     app:layout_constraintStart_toStartOf="parent">
 
             </androidx.appcompat.widget.AppCompatTextView>
+
+            <View
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dividerColor" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

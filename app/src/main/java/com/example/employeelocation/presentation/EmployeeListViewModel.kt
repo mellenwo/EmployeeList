@@ -14,6 +14,7 @@ class EmployeeListViewModel(
 ) : BaseViewModel(baseCoroutineDispatcher) {
 
     var employees = NonNullObservableField <List<EmployeeDomainModel>>(listOf())
+    var allEmployees = listOf<EmployeeDomainModel>()
     var locations = ArrayList<String>()
     var locationsList = ObservableField<ArrayList<String>>()
 
@@ -23,6 +24,7 @@ class EmployeeListViewModel(
 
     private fun getEmployeeList() = launch {
         employees.set(getEmployeeListUseCase.execute())
+        allEmployees = employees.get()
 
         val employeesList = employees.get()
         employeesList.forEach {
@@ -33,6 +35,14 @@ class EmployeeListViewModel(
 
     fun buildEmployeeLocationsList(locations: ArrayList<String>) : List<String> {
         return locations.distinct()
+    }
+
+    fun filterByLocation(location: String) {
+        val employeeList = allEmployees
+        val filteredEmployeeList = employeeList.filter {
+            it.locations.contains(location)
+        }
+        employees.set(filteredEmployeeList)
     }
 
 }

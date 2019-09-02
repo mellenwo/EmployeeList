@@ -1,5 +1,6 @@
 package com.example.employeelocation.presentation
 
+import androidx.databinding.ObservableField
 import com.example.employeelocation.base.delegate.NonNullObservableField
 import com.example.employeelocation.base.presentation.BaseViewModel
 import com.example.employeelocation.domain.model.EmployeeDomainModel
@@ -13,6 +14,8 @@ class EmployeeListViewModel(
 ) : BaseViewModel(baseCoroutineDispatcher) {
 
     var employees = NonNullObservableField <List<EmployeeDomainModel>>(listOf())
+    var locations = ArrayList<String>()
+    var locationsList = ObservableField<ArrayList<String>>()
 
     override fun onLoadData() {
         getEmployeeList()
@@ -20,6 +23,16 @@ class EmployeeListViewModel(
 
     private fun getEmployeeList() = launch {
         employees.set(getEmployeeListUseCase.execute())
+
+        val employeesList = employees.get()
+        employeesList.forEach {
+            locations.addAll(it.locations)
+        }
+        locationsList.set(locations)
+    }
+
+    fun buildEmployeeLocationsList(locations: ArrayList<String>) : List<String> {
+        return locations.distinct()
     }
 
 }

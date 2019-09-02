@@ -1,7 +1,8 @@
 package com.example.employeelocation.data.retrofit.response
 
-import com.example.employeelocation.data.model.EmployeeResultDataModel
+import com.example.employeelocation.data.model.EmployeeDataModel
+import com.google.gson.annotations.SerializedName
 
 class GetEmployeeListResponse (
-    val results: EmployeeResultDataModel
+    @SerializedName("employees") val employees: ArrayList<EmployeeDataModel>
 )

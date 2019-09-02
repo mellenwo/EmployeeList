@@ -1,41 +1,39 @@
 package com.example.employeelocation.presentation.recyclerview
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.employeelocation.R
 import com.example.employeelocation.base.delegate.observer
+import com.example.employeelocation.databinding.RvListItemEmployeeBinding
 import com.example.employeelocation.domain.model.EmployeeDomainModel
 
 class EmployeeAdapter: RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
 
-    var employees: List<EmployeeDomainModel> by observer(listOf()) {
+    var items: List<EmployeeDomainModel> by observer(listOf()) {
         notifyDataSetChanged()
     }
-
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.rv_list_item_employee, parent, false)
-        return ViewHolder(view)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding: RvListItemEmployeeBinding = DataBindingUtil.inflate(layoutInflater, R.layout.rv_list_item_employee, parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(employees[position])
+        holder.bind(items[position])
     }
 
-    override fun getItemCount(): Int = employees.size
+    override fun getItemCount(): Int = items.size
 
     inner class ViewHolder (
-        itemView: View
-    ) : RecyclerView.ViewHolder(itemView) {
+        private val binding: RvListItemEmployeeBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        //private var
-
-        fun bind(albumDomainModel: EmployeeDomainModel) {
-
+        fun bind(employeeDomainModel: EmployeeDomainModel) {
+            binding.employee = employeeDomainModel
         }
 
     }
-
-
 }

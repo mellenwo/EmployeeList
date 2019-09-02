@@ -1,5 +1,7 @@
 package com.example.employeelocation.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class EmployeeListDataModel(
-    val employeeList: List<EmployeeDataModel>
+    @SerializedName("employees") val employees: ArrayList<EmployeeDataModel>
 )

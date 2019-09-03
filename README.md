@@ -13,3 +13,4 @@ Simple app to display list of employees and display them based on location
 - UI/UX improvements
 - Error handling
 - Local data persistence
+- Seperate into multiple module (Domain, Data, Presentation)

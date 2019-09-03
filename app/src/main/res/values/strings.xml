@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EmployeeList</string>
+    <string name="office_location_label">Office Location:</string>
+</resources>

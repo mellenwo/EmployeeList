@@ -38,8 +38,8 @@ class EmployeeListActivity: BaseActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.employeeListRv.layoutManager = LinearLayoutManager(this)
-        binding.employeeListRv.adapter = viewAdapter
+        employee_list_rv.layoutManager = LinearLayoutManager(this)
+        employee_list_rv.adapter = viewAdapter
         viewManager = LinearLayoutManager(this)
     }
 

@@ -2,7 +2,6 @@ package com.example.employeelocation.base.di
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import org.koin.core.context.GlobalContext
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
@@ -20,8 +19,4 @@ object CoroutineModule {
         single(named(BACKGROUND), definition = { Dispatchers.Default })
         single(named(IO), definition = { Dispatchers.IO })
     }
-
-    @JvmStatic
-    fun getCoroutineDispatcher(name: String): CoroutineDispatcher =
-        GlobalContext.get().koin.get(named(name))
 }

@@ -9,7 +9,7 @@ import com.example.employeelocation.base.delegate.observer
 import com.example.employeelocation.databinding.RvListItemEmployeeBinding
 import com.example.employeelocation.domain.model.EmployeeDomainModel
 
-class EmployeeAdapter: RecyclerView.Adapter<EmployeeAdapter.ViewHolder>() {
+class EmployeeListAdapter: RecyclerView.Adapter<EmployeeListAdapter.ViewHolder>() {
 
     var items: List<EmployeeDomainModel> by observer(listOf()) {
         notifyDataSetChanged()

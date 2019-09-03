@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:gravity="center_vertical"
-                android:text="Office Location: "
+                android:text="@string/office_location_label"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/employee_locations_spinner"
                 app:layout_constraintStart_toStartOf="parent"

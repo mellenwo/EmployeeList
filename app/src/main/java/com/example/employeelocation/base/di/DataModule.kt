@@ -7,7 +7,5 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val dataModule = module {
-
     single<EmployeeRepository> { EmployeeRepositoryImpl(get(named(IO))) }
-
 }

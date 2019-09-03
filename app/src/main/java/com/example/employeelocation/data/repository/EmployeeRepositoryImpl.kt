@@ -19,6 +19,4 @@ class EmployeeRepositoryImpl(private val backgroundDispatcher: CoroutineDispatch
                 it.toDomainModel()
             }
     }
-
 }
-

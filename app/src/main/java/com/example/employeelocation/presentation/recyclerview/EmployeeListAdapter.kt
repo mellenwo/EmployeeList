@@ -32,6 +32,7 @@ class EmployeeListAdapter: RecyclerView.Adapter<EmployeeListAdapter.ViewHolder>(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(employeeDomainModel: EmployeeDomainModel) {
+            // setting employee object
             binding.employee = employeeDomainModel
         }
 
